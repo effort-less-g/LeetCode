@@ -1,0 +1,21 @@
+class Solution:
+    def equalPairs(self, grid: List[List[int]]) -> int:
+        rd = {}
+        cd = {}
+        grid2 = []
+        count = 0
+        for i in range(len(grid)):
+            grid2.append([])
+
+        for idx, row in enumerate(grid):
+            for idx2, num in enumerate(row):
+                grid2[idx2].append(num)
+
+        # print(grid2)
+
+        for row in grid:
+            for col in grid2:
+                if row == col:
+                    count += 1
+
+        return count
